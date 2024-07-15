@@ -1,7 +1,10 @@
+import Hero from "../components/Hero"
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <main className="h-screen mt-24 mb-20">
+      <Hero/>
+    </main>
   )
 }
 

@@ -2,7 +2,7 @@
 
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <main className="h-screen">Dashboard</main>
   )
 }
 
