@@ -29,7 +29,7 @@ body {
 }
 
 .active-item {
-  @apply bg-gradient-to-r hover:bg-gradient-to-tl from-pink-700/80 to-sky-600 text-black text-2xl font-semibold rounded-md p-2 w-full;
+  @apply bg-gradient-to-r hover:bg-gradient-to-tl from-pink-700/80 to-sky-600 text-black text-xl font-semibold rounded-md p-2 w-full;
 }
 
 .input-item {

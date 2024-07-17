@@ -6,9 +6,9 @@ import Logo from "./Logo";
 
 const Footer = () => {
   return (
-    <footer className="w-full p-2 bg-slate-800 text-white">
+    <footer className="container mx-auto p-2 bg-slate-800 text-white">
       <div className="flex flex-col justify-between ">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-col md:flex-row">
           <div className="flex-1">
             <div className="w-fit py-3">
               <Link to={"/"}>
@@ -32,10 +32,10 @@ const Footer = () => {
             <div className="my-2">
               <p className="text-xl font-semibold">Follow us on</p>
               <div className="flex items-center gap-2">
-                <a href="#" className="text-2xl hover-item p-2 rounded-md cursor-pointer"><FaFacebook /></a>
-                <a href="#" className="text-2xl hover-item p-2 rounded-md cursor-pointer"><FaTwitter/></a>
-                <a href="#" className="text-2xl hover-item p-2 rounded-md cursor-pointer"><FaInstagram/></a>
-                <a href="#" className="text-2xl hover-item p-2 rounded-md cursor-pointer"><FaGithub/></a>
+                <a href="#" className="text-xl md:text-2xl hover:text-orange-600 hover:bg-slate-700 p-1 md:p-2 rounded-md cursor-pointer flex items-center justify-center"><FaFacebook /></a>
+                <a href="#" className="text-xl md:text-2xl hover:text-orange-600 hover:bg-slate-700 p-1 md:p-2 rounded-md cursor-pointer flex items-center justify-center"><FaTwitter/></a>
+                <a href="#" className="text-xl md:text-2xl hover:text-orange-600 hover:bg-slate-700 p-1 md:p-2 rounded-md cursor-pointer flex items-center justify-center"><FaInstagram/></a>
+                <a href="#" className="text-xl md:text-2xl hover:text-orange-600 hover:bg-slate-700 p-1 md:p-2 rounded-md cursor-pointer flex items-center justify-center"><FaGithub/></a>
 
               </div>
             </div>
@@ -43,24 +43,24 @@ const Footer = () => {
 
           <div className="p-4 flex-1 w-full items-center justify-center">
             <div className="max-w-lg mx-auto text-white rounded-md p-3">
-              <h1 className="text-2xl font-semibold text-center p-2">
+              <h1 className="text-xl md:text-2xl font-semibold text-center p-2">
                 Subscribe Our Newsletter
               </h1>
               <form className="flex items-center justify-center">
-                <div className="mt-3 flex w-full items-center justify-center gap-2">
+                <div className="mt-3 flex w-full items-center justify-center flex-col md:flex-row gap-2">
                   <div className="flex-1">
                     <input
                       type="email"
                       name="email"
                       id="email"
                       placeholder="Enter your email address"
-                      className="p-3 text-gray-800 rounded-md w-full focus:outline-none border-none"
+                      className="p-2 md:p-3 text-nowrap text-gray-800 rounded-md w-full focus:outline-none border-none"
                     />
                   </div>
                   <div className="flex-1">
                     <button
                       type="submit"
-                      className=" w-full p-3 font-bold bg-gradient-to-r from-blue-500 to-pink-500/70 rounded-lg text-white hover:bg-gradient-to-tl transition-all cursor-pointer"
+                      className=" w-full p-2 md:p-3 font-bold bg-gradient-to-r from-blue-500 to-pink-500/70 rounded-lg text-white hover:bg-gradient-to-tl transition-all cursor-pointer"
                     >
                       Subscribe
                     </button>

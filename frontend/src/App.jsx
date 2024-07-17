@@ -1,4 +1,4 @@
-import { BrowserRouter,Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import SignIn from "./pages/SignIn";
@@ -16,6 +16,7 @@ function App() {
     <Container>
       <BrowserRouter>
         <MainNavbar />
+
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/sign-in" element={<SignIn />} />
