@@ -1,93 +1,66 @@
-import { IoSearchOutline } from "react-icons/io5";
 import { Link, useLocation } from "react-router-dom";
+import { IoMdHome } from "react-icons/io";
+import { FaMicroblog } from "react-icons/fa6";
+import { CiLogout } from "react-icons/ci";
+import { MdOutlineCreateNewFolder } from "react-icons/md";
 
-const Navbar = () => {
+const DashNavbar = () => {
   const location = useLocation();
+  console.log(location);
   const isActive = (path) => location.pathname === path;
 
   return (
-    <header className="">
-      <div className="flex items-center justify-between flex-col">
-        <div>
-          <div className="flex items-center w-full text-xl justify-center gap-1 p-3 md:text-2xl font-bold bg-gradient-to-r from-blue-500 to-pink-500/70 rounded-lg text-white hover:bg-gradient-to-tl transition-all cursor-pointer">
-            <span className="text-gray-900">Blog</span>
-            <span className="bg-gradient-to-r from-gray-900/70 to-gray-900 bg-clip-text text-transparent">
-              Ease
-            </span>
-          </div>
-        </div>
-        <form className="hidden md:block">
-          <div className="flex items-center rounded-md justify-center gap-6 px-2 border">
-            <input
-              type="text"
-              className="p-2 bg-transparent w-full focus:outline-none border-none"
-              placeholder="Search Blog"
-            />
-            <button className="font-bold text-2xl hover:text-blue-500">
-              <IoSearchOutline />
-            </button>
-          </div>
-        </form>
-        <nav className="">
-          <ul className="flex gap-4 items-center justify-center p-2 w-full">
-            <Link
-              to="/"
-              className={`text-center border rounded-md border-slate-700 ${
-                isActive("/") ? "active-item" : "link"
-              }`}
-            >
-              Home
-            </Link>
+    <nav className="w-full h-full">
+      <ul className="flex gap-4 items-center justify-center p-2 flex-col">
+        <Link
+          to="dash-home"
+          className={`text-center flex items-center justify-center border rounded-md gap-2 border-slate-700 ${
+            isActive("/dashboard/dash-home") ? "active-item" : "link"
+          }`}
+        >
+          <span>
+            <IoMdHome className="size-8 text-white" />
+          </span>
+          <span className="text-wrap hidden md:block">Dashboard</span>
+        </Link>
+        <Link
+          to="all-blogs"
+          className={`text-center flex items-center justify-center border rounded-md gap-2 border-slate-700 ${
+            isActive("/dashboard/all-blogs") ? "active-item" : "link"
+          }`}
+        >
+          <span>
+            <FaMicroblog className="size-8 text-white" />
+          </span>
+          <span className="hidden md:block">dashHome</span>
+        </Link>
 
-            <Link
-              to="/about"
-              className={`text-center border rounded-md border-slate-700 ${
-                isActive("/about") ? "active-item" : "link"
-              }`}
-            >
-              About
-            </Link>
+        <Link
+          to="create-blog"
+          className={`text-center flex items-center justify-center border rounded-md gap-2 border-slate-700 ${
+            isActive("/dashboard/create-blog") ? "active-item" : "link"
+          }`}
+        >
+          <span>
+            <MdOutlineCreateNewFolder className="size-8 text-white" />
+          </span>
+          <span className="hidden md:block">Projects</span>
+        </Link>
 
-            <Link
-              to="/dashboard"
-              className={`text-center border rounded-md border-slate-700 ${
-                isActive("/dashboard") ? "active-item" : "link"
-              }`}
-            >
-              Dashboard
-            </Link>
-
-            <Link
-              to="/projects"
-              className={`text-center border rounded-md border-slate-700 ${
-                isActive("/projects") ? "active-item" : "link"
-              }`}
-            >
-              Projects
-            </Link>
-
-            <Link
-              to="/sign-in"
-              className={`text-center text-nowrap border rounded-md border-slate-700 ${
-                isActive("/sign-in") ? "active-item" : "link"
-              }`}
-            >
-              Sign In
-            </Link>
-
-            <Link
-              to="/sign-up"
-              className={`text-center text-nowrap border rounded-md border-slate-700 ${
-                isActive("/sign-up") ? "active-item" : "link"
-              }`}
-            >
-              Sign Up
-            </Link>
-          </ul>
-        </nav>
-      </div>
-    </header>
+        <Link
+          to="/"
+          className={`text-center flex items-center justify-center text-nowrap border rounded-md gap-2 border-slate-700 ${
+            isActive("/") ? "active-item" : "link"
+          }`}
+        >
+          <span>
+            <CiLogout className="size-8 text-white" />
+          </span>
+          <span className="hidden md:block">Log Out</span>
+        </Link>
+      </ul>
+    </nav>
   );
 };
 
-export default Navbar;
+export default DashNavbar;

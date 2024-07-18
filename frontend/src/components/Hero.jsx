@@ -42,7 +42,7 @@ const Hero = () => {
         <img
           src={images[currentImageIndex].src}
           alt={images[currentImageIndex].alt}
-          className="w-full h-96 object-cover"
+          className="w-full h-96 object-cover rounded-lg"
         />
       </div>
     </div>
