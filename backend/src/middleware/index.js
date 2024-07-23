@@ -1,21 +1,25 @@
 import jwt from "jsonwebtoken";
 
-const { sign, verify } = jwt;
-
-export const generateJwtToken = (user ,req,res) => {
-
-  const token = sign({_id:user._id,email:user.email}, process.env.JWT_SECRET, { expiresIn: "1d" });
-  res.cookie("token", token, {
-    httpOnly: true,
-    secure: true,
-    maxAge: 3600 * 1000,
-  });
- return token;
+export const generateJwtToken = (user, req, res) => {
+  try {
+    if (!user) {
+      return res.status(400).json({ message: "No User Found" });
+    }
+    const token = jwt.sign(
+      { _id: user._id, email: user.email },
+      process.env.JWT_SECRET,
+      { expiresIn: "1d" }
+    );
+    return token;
+  } catch (error) {
+    console.error("Error generating token:", error.message);
+    return res.status(500).json({ message: "Error generating token" });
+  }
 };
 
 export const verifyToken = (req, res, next) => {
-  const token = req.cookies.token;
-  // console.log('Token:', token);
+  const token = req.cookies.access_token;
+  // console.log("Middleware Token:", token);
 
   if (!token) {
     return res.status(401).json({ message: "Unauthorized access" });
@@ -23,13 +27,18 @@ export const verifyToken = (req, res, next) => {
 
   jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
     if (err) {
-      return res.status(403).json({ message: "Please Login to create blog", error: err.message });
+      return res
+        .status(403)
+        .json({ message: "Please Login to create blog", error: err.message });
     }
 
     req.user = user;
     next();
   });
 };
+
+
+
 
 export const customErrorHandler = (err, req, res, next) => {
   if (err) {

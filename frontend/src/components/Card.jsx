@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 const Card = ({ post }) => {
-  console.log(post);
+  // console.log(post);
   return (
     <div className="card border p-2 rounded-md border-slate-200">
       <div className="card-header">

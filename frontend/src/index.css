@@ -39,6 +39,11 @@ body {
 .button-primary{
   @apply w-full bg-blue-500/70 text-2xl hover:bg-blue-700 text-white font-bold p-2 rounded
 }
+
+.button-danger{
+  @apply w-full bg-red-500/70 text-2xl hover:bg-red-700 text-white font-bold p-2 rounded
+
+}
 .hover-item {
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;

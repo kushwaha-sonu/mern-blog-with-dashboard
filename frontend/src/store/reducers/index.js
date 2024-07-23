@@ -4,7 +4,7 @@ import { userSlice } from '../slices/userSlice';
 
 
 export const rootReducer = combineReducers({
- userSlice: userSlice.reducer,
+ user: userSlice.reducer,
 });
 
 export default rootReducer;

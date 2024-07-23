@@ -10,9 +10,11 @@ import Container from "./components/Container";
 import DashHome from "./pages/DashHome";
 
 import MainNavbar from "./components/MainNavbar";
-import Profile from "./pages/Profile";
+import ProfilePage from "./pages/ProfilePage";
 import AllBlogs from "./pages/AllBlogs";
 import CreateBlog from "./pages/CreateBlog";
+
+
 
 function App() {
   return (
@@ -29,7 +31,7 @@ function App() {
             <Route path="all-blogs" element={<AllBlogs />} />
             <Route path="create-blog" element={<CreateBlog />} />
           </Route>
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
         <Footer />
       </BrowserRouter>

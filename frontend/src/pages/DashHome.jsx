@@ -1,6 +1,6 @@
 
 
-const DashHome = () => {
+function DashHome() {
   return (
     <div>DashHome</div>
   )
